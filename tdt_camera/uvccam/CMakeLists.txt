@@ -1,0 +1,7 @@
+project(uvccam)
+set(LIBJPEG_TURBO jpeg turbojpeg)
+find_package(OpenCV REQUIRED)
+link_directories(${PROJECT_SOURCE_DIR}/libjpeg-turbo/lib64)
+include_directories(${PROJECT_SOURCE_DIR}/libjpeg-turbo/include)
+add_library(uvccam SHARED uvccam.cpp)
+target_link_libraries(uvccam PRIVATE ${LIBJPEG_TURBO} ${OpenCV_LIBS} -lpthread -lm)

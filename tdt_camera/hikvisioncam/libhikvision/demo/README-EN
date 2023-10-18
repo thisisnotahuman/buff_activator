@@ -1,0 +1,95 @@
+Machine Vision Camera Linux SDK User Manual
+===========================================================================
+Version: 2.2.0.7
+
+Camera supported : GigE and USB3 Camera
+
+OS supported: ubuntu 12.04 (32/64 bits), ubuntu 14.04 (32/64 bits), 
+              centos7 (32/64 bits), redhat (32 bits)
+===========================================================================
+
+Program demostration
+===========================================================================
+Display: Image dispaly sample
+1. Create image window by using xlib library;
+2. Enumerate device, select device and create handle, and then open device;
+3. Start grabbing, call dispaly function to input window handle;
+4. Input enter to stop grabbing.
+
+===========================================================================
+ForceIP: Set forceip
+1. Enumerate device, select device and create handle;
+2. Set forceip;
+3. Input enter to stop grabbing.
+
+===========================================================================
+Grab_ImageCallback: Grabbing image by callback
+1. Enumerate device, select device and create handle, and then open device;
+2. Set trigger mode as off;
+3. Start grabbing;
+4. If image data is grabbed, ImageCallBackEx will be called;
+5. Input enter to stop grabbing.
+
+===========================================================================
+GrabImage: Actively grab image
+1. Enumerate device, select device and create handle, and then open device;
+2. Set trigger mode as off;
+3. Start grabbing, open a thread to grab image data;
+4. If image data is grabbed, MV_OK will be returned by MV_CC_GetOneFrameTimeout;
+5. Input enter to stop grabbing.
+
+===========================================================================
+GrabMultipleCamera: Multiple camera grabbing
+1. Enumerate device, select device and create handle, and then open device;
+2. Set trigger mode as off;
+3. Start grabbing, open a thread to grab image data;
+4. If image data is grabbed, MV_OK will be returned by MV_CC_GetOneFrameTimeout;
+5. Input enter to stop grabbing.
+
+===========================================================================
+ImageProcess: Image processing (Save image and pixel format conversion)
+1. Enumerate device, select device and create handle, and then open device;
+2. Start grabbing, if image data is grabbed, MV_OK will be returned by MV_CC_GetOneFrameTimeout;
+3. Select case 0, 1 or 2 to do different image processing;
+4. Input enter to stop grabbing.
+
+===========================================================================
+ReconnectDemo: Re-connect sample
+1. Open a thread to re-connect camera, which contains enumeration, 
+   create handle, open device, register exception callback and other functions
+2. If there is a camera lost connect by exception, re-enumrate and connect the 0th camera;
+3. Input enter to stop grabbing.
+
+===========================================================================
+SetIO: Set IO
+1. Enumerate device, select device and create handle, and then open device;
+2. Get LineSelector, and set LineSelector;
+3. Get LineMode, and set LineMode;
+4. Input enter to stop grabbing.
+
+===========================================================================
+SetParam: Set parameters
+1. Enumerate device, select device and create handle, and then open device;
+2. Set or get int type parameters;
+3. Set or get float type parameters;
+4. Set or get enum type parameters;
+5. Set or get bool type parameters;
+6. Set or get string type parameters;
+7. Input enter to stop grabbing.
+
+===========================================================================
+Trigger_Image: Grabbing by trigger
+1. Enumerate device, select device and create handle, and then open device;
+2. Set trigger mode as on, and trigger source as software;
+3. Start grabbing, open a thread to send trigger command and get image data;
+4. Input enter to stop grabbing.
+
+===========================================================================
+Trigger_ImageCallback: Grabbing by trigger in callback
+1. Enumerate device, select device and create handle, and then open device;
+2. Set trigger mode as on, and trigger source as software;
+3. Start grabbing, open a thread to send trigger command;
+4. If image data is grabbed, ImageCallBackEx will be called;
+5. Input enter to stop grabbing.
+
+

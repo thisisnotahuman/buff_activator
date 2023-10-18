@@ -1,0 +1,531 @@
+armor:
+    message:
+        -   group_name: 装甲板检测
+            item:
+                -   item_name: 机器学习前装甲板数量
+                    type: int
+
+                -   item_name: 机器学习后装甲板数量
+                    type: int
+
+                -   item_name: 装甲板类型1
+                    type: int
+
+                -   item_name: 装甲板类型2
+                    type: int
+
+                -   item_name: 当前装甲板类型
+                    type: int
+
+
+        -   group_name: 双灯条匹配
+            item:
+                -   item_name: 灯条不匹配原因
+                    type: string
+
+                -   item_name: int
+                    type: int
+
+                -   item_name: float
+                    type: float
+
+                -   item_name: string
+                    type: string
+
+                -   item_name: double
+                    type: double
+
+                -   item_name: short
+                    type: short
+
+                -   item_name: bool
+                    type: bool
+
+                -   item_name: long
+                    type: long
+
+                -   item_name: point
+                    type: point2
+
+                -   item_name: 装甲板解算
+                    type: vec3
+
+                -   item_name: vec4
+                    type: vec4
+
+        -   group_name: 装甲板解算
+            item:
+
+                -   item_name: 单装甲板世界直角坐标
+                    type: vec3
+
+                -   item_name: 单装甲板世界极坐标
+                    type: vec3
+
+                -   item_name: 左装甲板世界直角坐标
+                    type: vec3
+
+                -   item_name: 右装甲板世界直角坐标
+                    type: vec3
+
+                -   item_name: 左装甲板世界极坐标
+                    type: vec3
+
+                -   item_name: 右装甲板世界极坐标
+                    type: vec3
+
+        -   group_name: 装甲板预测
+            item:
+                -   item_name: 旋转中心世界直角坐标
+                    type: vec3
+
+                -   item_name: 旋转中心世界极坐标
+                    type: vec3
+
+                -   item_name: 旋转中心反投影坐标
+                    type: vec2
+
+                -   item_name: 旋转中心跟随预测点直角坐标
+                    type: vec3
+                -   item_name: 旋转中心跟随预测点距离补偿点直角坐标
+                    type: vec3
+
+                -   item_name: 小陀螺转速
+                    type: double
+
+                -   item_name: 跟随预测点反投影坐标
+                    type: vec2
+
+                -   item_name: 跟随预测点世界坐标
+                    type: vec3
+
+                -   item_name: 跟随预测点极坐标
+                    type: vec3
+
+                -   item_name: yaw线速度
+                    type: float
+
+                -   item_name: 机器人状态
+                    type: int
+
+        -   group_name: 串口信息
+            item:
+                -   item_name: 接收yaw和pitch
+                    type: vec2
+
+                -   item_name: 发送yaw和pitch
+                    type: vec2
+
+                -   item_name: 弹速
+                    type: int
+
+                -   item_name: 位置环静差
+                    type: vec2
+
+                -   item_name: 开火命令
+                    type: bool
+
+        -   group_name: 卡尔曼滤波
+            item:
+                -   item_name: 跟随模式Q　&　R
+                    type: vec2
+
+
+    graphic:
+        -   group_name: 寻找到的灯条
+            is_hidden: true
+        -   group_name: 疑似装甲板
+            is_hidden: true
+        -   group_name: 输出装甲板
+            is_hidden: false
+        -   group_name: 数字区域范围
+            is_hidden: false
+        -   group_name: 决策结果
+            is_hidden: false
+        -   group_name: 检测出的轮廓
+            is_hidden: true
+        -   group_name: 双灯条检测潜在装甲板区域
+            is_hidden: true
+        -   group_name: 单灯条检测潜在装甲板区域
+            is_hidden: true
+        -   group_name: 旋转中心
+            is_hidden: false
+        -   group_name: 旋转中心预测点
+            is_hidden: true
+        -   group_name: 旋转中心预测距离补偿点
+            is_hidden: false
+        -   group_name: 解算的装甲板法线
+            is_hidden: true
+        -   group_name: 跟随模式预测点
+            is_hidden: false
+        -   group_name: 装甲板Tag0
+            is_hidden: false
+        -   group_name: 装甲板Tag1
+            is_hidden: false
+        -   group_name: 装甲板Tag2
+            is_hidden: false
+        -   group_name: 装甲板Tag3
+            is_hidden: false
+        -   group_name: 时间戳
+            is_hidden: false
+        -   group_name: 帧率
+            is_hidden: false
+        -   group_name: 跟随模式预测点重力补偿
+            is_hidden: false
+        -   group_name: 开火高亮
+            is_hidden: false
+        -   group_name: 解算点投影
+            is_hidden: false
+        -   group_name: 重力补偿投影
+            is_hidden: false
+        -   group_name: 装甲板解算出的轴心
+            is_hidden: true
+        -   group_name: EKF预测轴心
+            is_hidden: true
+
+    parameter:
+        -   group_name: Armor_Detector
+            item:
+                -   item_name: ArmorDetect_lightbarthre
+                    type: int
+                    min: 0
+                    max: 255
+        -   group_name: FollowMode
+            item:
+                -   item_name: Follow_Pitch_offset
+                    type: float
+                    min: -1
+                    max: 1
+                -   item_name: Follow_Yaw_offset
+                    type: float
+                    min: -1
+                    max: 1
+                -   item_name: Constants_in_rY
+                    type: float
+                    min: -5
+                    max: 5
+                -   item_name: Squared_in_rY
+                    type: float
+                    min: -5
+                    max: 5
+                -   item_name: Variance_in_rY
+                    type: float
+                    min: -5
+                    max: 5
+                -   item_name: qY里time_diff的系数
+                    type: float
+                    min: 0
+                    max: 1
+                -   item_name: deltaX_limit
+                    type: float
+                    min: 0
+                    max: 30
+                -   item_name: deltaY_limit
+                    type: float
+                    min: 0
+                    max: 30
+        -   group_name: GyroMode
+            item:
+                -   item_name: Gyro_Pitch_offset
+                    type: float
+                    min: -1
+                    max: 1
+                -   item_name: Gyro_Yaw_offset
+                    type: float
+                    min: -1
+                    max: 1
+
+buff:
+    message:
+        -   group_name: 能量机关检测
+            item:
+                -   item_name: 装甲板面积
+                    type: float
+
+                -   item_name: 装甲板高度
+                    type: float
+
+                -   item_name: 装甲板宽度
+                    type: float
+
+        -   group_name: R的识别
+            item:
+                -   item_name: r的面积
+                    type: float
+
+                -   item_name: 装甲板面积
+                    type: float
+
+        - group_name: 流水灯识别
+          item:
+              -   item_name: 旋转角度
+                  type: float
+              -   item_name: 小轮廓数量
+                  type: float
+              -   item_name: 大轮廓数量
+                  type: float
+              -   item_name: knn_r
+                  type: float
+              -   item_name: svm_flow_water
+                  type: float
+              -   item_name: 装甲板宽
+                  type: float
+              -   item_name: 装甲板长
+                  type: float
+        - group_name: 串口信息
+          item:
+
+              -   item_name: 接收pitch
+                  type: float
+              -   item_name: 接收yaw
+                  type: float
+              -   item_name: 接收弹速
+                  type: float
+              -   item_name: 发送pitch
+                  type: float
+              -   item_name: 发送yaw
+                  type: float
+              -   item_name: 是否击打
+                  type: bool
+
+        - group_name: 装甲板识别
+          item:
+              -   item_name: short
+                  type: short
+
+              -   item_name: bool
+                  type: bool
+
+              -   item_name: long
+                  type: long
+
+              -   item_name: point
+                  type: point2
+
+              -   item_name: point3
+                  type: point3
+
+              -   item_name: vec4
+                  type: vec4
+        -   group_name: 解算和预测
+            item:
+
+                -   item_name: 平移矩阵
+                    type: vec3
+                -   item_name: 优化平移矩阵
+                    type: vec3
+                -   item_name: 旋转矩阵
+                    type: vec3
+                -   item_name: 解算目标点
+                    type: vec3
+                -   item_name: 预测目标点
+                    type: vec3
+                -   item_name: 预测角度
+                    type: float
+                -   item_name: Buff_type
+                    type: int
+                -   item_name: Clock
+                    type: int
+                -   item_name: deta_r
+                    type: float
+                -   item_name: deta_g
+                    type: float
+
+
+
+    graphic:
+        -   group_name: 装甲板轮廓查找
+            is_hidden: true
+        -   group_name: 装甲板识别
+            is_hidden: false
+        -   group_name: 中心轮廓
+            is_hidden: true
+        -   group_name: R
+            is_hidden: true
+        -   group_name: 流水灯轮廓
+            is_hidden: true
+        -   group_name: Buff
+            is_hidden: false
+        -   group_name: 帧率
+            is_hidden: false
+        -   group_name: 时间戳
+            is_hidden: false
+        -   group_name: 预测点
+            is_hidden: false
+        -   group_name: 测试点
+            is_hidden: false
+
+
+    parameter:
+        -   group_name: 图像处理
+            item:
+                -   item_name: EnergyBuffDetect_gray_thre
+                    type: int
+                    min: 0
+                    max: 255
+
+                -   item_name: EnergyBuffDetect_split_thre
+                    type: float
+                    min: 0
+                    max: 255
+
+                -   item_name: EnergyBuffDetect_dialesize
+                    type: int
+                    min: 0
+                    max: 10
+
+                -   item_name: EnergyBuffDetect_dialetimes
+                    type: int
+                    min: 0
+                    max: 5
+
+                -   item_name: EnergyBuffDetect_erodesize
+                    type: int
+                    min: 0
+                    max: 10
+
+                -   item_name: EnergyBuffDetect_erodetimes
+                    type: int
+                    min: 0
+                    max: 5
+        -   group_name: 预测偏执
+            item:
+                -   item_name: camera_pitch
+                    type: float
+                    min: -1
+                    max: 1
+                -   item_name: camera_yaw
+                    type: float
+                    min: -1
+                    max: 1
+                -   item_name: command_y
+                    type: int
+                    min: -30
+                    max: 60
+                -   item_name: predict_time
+                    type: int
+                    min: 0
+                    max: 800
+                -   item_name: fire_intervel
+                    type: int
+                    min: 0
+                    max: 300
+                -   item_name: smallbuff_deta_r
+                    type: int
+                    min: 0
+                    max: 30
+                -   item_name: smallbuff_deta_g
+                    type: int
+                    min: 0
+                    max: 30
+                -   item_name: bigbuff_deta_r
+                    type: int
+                    min: 0
+                    max: 40
+                -   item_name: bigbuff_deta_g
+                    type: int
+                    min: 0
+                    max: 40
+
+lob:
+    message:
+
+    graphic:
+        -   group_name: 帧率
+            is_hidden: false
+        -   group_name: 时间戳
+            is_hidden: false
+    parameter:
+        -   group_name: base
+            item:
+                -   item_name: 阈值
+                    type: int
+                    min: 0
+                    max: 255
+
+
+camera:
+    -   group_name: camera parameter
+        item:
+            -   item_name: exposure
+                type: int
+                min: 0
+                max: 10000
+
+data_visualization:
+#    -   plot_name: 帧率
+#        lines:
+#            -   line_name: 时间
+#                color: "#ff0000"
+#            -   line_name: Velocity_1
+#                color: "#00ff00"
+#            -   line_name: Velocity_2
+#                color: "#0000ff"
+#            -   line_name: Velocity_3
+#                color: "#ffff00"
+    -   plot_name: 跟随模式装甲板中心.x
+        lines:
+            -   line_name: 预测.x
+                color: "#ff0000"
+            -   line_name: 实际.x
+                color: "#00ff00"
+    -   plot_name: 跟随模式装甲板中心.y
+        lines:
+            -   line_name: 预测.y
+                color: "#ff0000"
+            -   line_name: 实际.y
+                color: "#00ff00"
+    -   plot_name: 跟随模式速度
+        lines:
+            -   line_name: 滤波前
+                color: "#ff0000"
+            -   line_name: 滤波后
+                color: "#00ff00"
+    -   plot_name: 小陀螺模式轴心.x
+        lines:
+            -   line_name: 预测.x
+                color: "#ff0000"
+            -   line_name: 实际.x
+                color: "#00ff00"
+    -   plot_name: 小陀螺模式轴心.y
+        lines:
+            -   line_name: 预测.y
+                color: "#ff0000"
+            -   line_name: 实际.y
+                color: "#00ff00"
+    # -   plot_name: EKF体心.x
+    #     lines:
+    #         -   line_name: 预测.x
+    #             color: "#ff0000"
+    #         -   line_name: 实际.x
+    #             color: "#00ff00"
+    # -   plot_name: EKF体心.z
+    #     lines:
+    #         -   line_name: 预测.z
+    #             color: "#ff0000"
+    #         -   line_name: 实际.z
+    #             color: "#00ff00"
+
+    -   plot_name: 能量机关
+        lines:
+            -   line_name: 预测
+                color: "#ff0000"
+            -   line_name: 实际
+                color: "#00ff00"
+            -   line_name: 角速度
+                color: "#ff0000"
+
+    -   plot_name: 串口发送
+        lines:
+            -   line_name: yaw
+                color: "#ff0000"
+            -   line_name: pitch
+                color: "#00ff00"
+
+    -   plot_name: 串口接收
+        lines:
+            -   line_name: yaw
+                color: "#ff0000"
+            -   line_name: pitch
+                color: "#00ff00"
+

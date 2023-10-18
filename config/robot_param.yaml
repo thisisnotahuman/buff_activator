@@ -1,0 +1,104 @@
+%YAML:1.0
+---
+# camera identity
+# 重要！
+name: "head_cam"
+# 免驱：0; 海康：1；
+type: 1
+
+# 建议优先使用guid
+# 若guid为空才使用下面两种打开方式
+guid: ""
+dev_index: 0
+path: "../../video.default"
+
+
+# 相机格式
+# 重要
+width: 1440
+height: 1080
+fps: 160
+# libjpeg-turbo/rgb8: 0; bayer: 1
+pixel_format: 1
+########################### Debug中的参数默认值 #####################
+ParamNumber:
+   ArmorDetect_lightbarthre: 80.
+   DebugWork: 1.
+   DistCamToWorld: 1.2720000000000001e+01
+   EnemyColor: 2.
+   OurColor: 0.
+   EnergyBuffDetect_dialesize: 6.
+   EnergyBuffDetect_dialetimes: 2.
+   EnergyBuffDetect_erodesize: 2.
+   EnergyBuffDetect_erodetimes: 1.
+   EnergyBuffDetect_gray_thre: 141.
+   EnergyBuffDetect_split_thre: 4.9439998626708984e+01
+   SrcHeight: 1080.
+   SrcWidth: 1440.
+   VideoRecordWork: 0.
+   enermy_color: 2.
+   firing_rate: 20.
+   gun_height: 1.2350000000000000e-01
+   lob_pitch_offset: 0.
+   lob_yaw_offset: 0.
+   pitch_k: 2.2200000000000000e-01
+   Follow_Yaw_offset: 0.01
+   Follow_Pitch_offset: 0.0584
+   Gyro_Yaw_offset: 0
+   Gyro_Pitch_offset: 0.0744
+   Constants_in_rY: 0.2
+   Squared_in_rY: 0.1
+   Variance_in_rY: 1.2
+   qY里time_diff的系数: 0.002
+   deltaX_limit: 10
+   deltaY_limit: 8
+   camera_pitch: 0.020
+   camera_yaw: -0.020
+   command_y: 25
+   bigbuff_deta_r: 4
+   bigbuff_deta_g: 8
+   smallbuff_deta_r: 12
+   smallbuff_deta_g: 12
+   predict_time: 410
+   fire_intervel: 110
+   阈值: 200
+ParamString:
+   new_data2: ""
+   put_your_String_param: shit
+########################### 相机参数 ############################
+CameraParam:
+   # 曝光
+   exposure: 2000.
+   # 增益
+   gain: 2.
+   # 白平衡
+   balance_val: 0
+   balance_red: 0
+   balance_green: 0
+   balance_blue: 0
+   # 亮度
+   brightness: 0
+   # 饱和度
+   saturation: 0
+   # 对比度
+   contrast: 0
+   # gamma
+   gamma: 0.4
+   # 锐度
+   sharpness: 0
+   # 黑电平
+   black_level: 240
+
+matrix: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [ 1.7820620745513731e+03, 0., 7.0796702103701205e+02, 0.,
+           1.7824515992613885e+03, 5.2022853173779197e+02, 0., 0., 1. ]
+dist_coeffs: !!opencv-matrix
+   rows: 5
+   cols: 1
+   dt: d
+   data: [ -5.6662142498489398e-01, 2.3460712149706836e-01,
+           -2.2061358389311924e-03, -4.7937196474139834e-04,
+           7.7201037950481266e-01 ]

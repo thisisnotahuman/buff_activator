@@ -1,0 +1,7 @@
+[2018-09-10 20:31:45] | CInterfaceManager.cpp-L4678: CamCtrl[2020009], U3V SDKVersion(1020009), DriverVersion(0)
+[2018-09-10 20:31:45] | CInterfaceManager.cpp-L1066: remalloc RecvBuf succeed, [2623488]
+[2018-09-10 20:31:45] | CInterfaceManager.cpp-L4335: Camctrl RecvThread Start, ThreadId[-1149245696]
+[2018-09-10 20:31:45] | CInterfaceManager.cpp-L4149: Camctrl DisplayThread Start, ThreadId[-1157638400]
+[2018-09-10 20:31:51] | CInterfaceManager.cpp-L1208: getfcnt [380], getfcntsucceed[0], totalRecv[0] 
+[2018-09-10 20:31:51] | CInterfaceManager.cpp-L4475: RecvThreadProcess exit
+[2018-09-10 20:31:51] | CInterfaceManager.cpp-L4323: DisplayProcess exit
